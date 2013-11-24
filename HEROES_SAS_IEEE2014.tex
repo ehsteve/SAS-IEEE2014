@@ -1,0 +1,592 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+
+\newcommand{\ap}{$\sim$}
+
+
+\documentclass[journal]{IEEEtran}
+
+\usepackage{url}
+\usepackage{subfig}
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  \graphicspath{{../figures/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\begin{document}
+
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{A Solar Aspect System for the HEROES Mission}
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Steven Christe, Albert Shih, \\ Marcello Rodriguez, Kyle Gregory, \\ Alexander Cramer, Melissa Edgerton}
+\IEEEauthorblockA{NASA Goddard Space Flight Center
+Greenbelt, MD 20771, USA\\
+Telephone: (301) 286-7999 \\
+Email: steven.christe@nasa.gov}
+\and
+\IEEEauthorblockN{Jessica Gaskin, Brian O'Connor, Alexander Sobey}
+\IEEEauthorblockA{NASA Marshall Space Flight Center\\
+Huntsville, AL 35811, USA\\
+Telephone: (256) 961-7818 \\
+Email: jessica.gaskin@nasa.gov}}
+
+%%%%
+\IEEEpubid{
+  \makebox[\columnwidth][l]
+  {\hfill
+U.S. Government work not protected by U.S. copyright%
+  }
+  \hspace{\columnsep}
+  \makebox[\columnwidth]{}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+% make the title area
+\maketitle
+
+\thispagestyle{plain}
+\pagestyle{plain}
+
+%\makeatletter
+%\def\ps@headings{%
+%\def\@oddfoot{\mbox{}\scriptsize\rightmark \hfil \thepage}%
+%\def\@evenfoot{\center{\thepage}}
+%}%
+%\makeatother
+%
+%\pagestyle{headings}
+%\setcounter{page}{1}
+%\pagenumbering{arabic}
+
+\begin{abstract}
+%\boldmath
+A new Solar Aspect System (SAS) has been developed to provide the ability to observe the Sun to an existing balloon payload HERO (short for the High Energy Replicated Optics). Developed under the HEROES program (High Energy Replicated Optics to Explore the Sun) the SAS aspect system provides solar pointing knowledge in pitch, yaw, and roll. The required precision of these measurements must be better than the HEROES X-ray resolution of \ap20 arcsec FWHM so as to not degrade the image resolution. The SAS consists of two separate systems; the Pitch-Yaw Aspect System (PYAS) and the Roll Aspect System (RAS). The PYAS systems functions by projecting an image of the Sun onto a screen with precision fiducials. A camera then takes an image of these fiducials and an automated algorithm determines the location of the Sun as well as the location of the fiducials. The spacing between fiducials is unique and allows each to be identified so that the location of the Sun on the screen can be precisely determined. The RAS functions by imaging the opposing Earth's horizon using a silvered prism imaged by a CCD camera. We described the design and first results of the performance of these systems during the HEROES flight which occurred in September 2013.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+\begin{IEEEkeywords}
+aspect system, high-altitude balloon, solar, Sun, X-ray 
+\end{IEEEkeywords}
+
+\let\thefootnote\relax\footnotetext{U.S. Government work not protected by U.S. copyright}
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+\section{Introduction}
+The High Energy Replicated Optics to Explore the Sun (HEROES) mission is a collaboration between the NASA Marshall Space Flight Center (MSFC) and the NASA Goddard Space Flight Center (GSFC) to upgrade and fly an existing MSFC-developed balloon payload to make novel hard x-ray (HXR) solar observations during the day in addition to astrophysical observations at night during a single flight. HEROES builds upon the existing MSFC-developed HERO balloon payload by adding the ability to observe the Sun through the addition of a new Solar Aspect System (SAS) in addition to making a number of other improvements \cite{Gaskin:2013hs, Christe:2013du}. HERO has flown several times in the past, most recently in 2011 from Alice Springs, Australia, to observe the Crab Nebula under the leadership of Dr. B. Ramsey \cite{Ramsey:2002ib}. The HEROES project is funded by the NASA HOPE (Hands On Project Experience) Training Opportunity awarded by the NASA Academy of Program/Project and Engineering Leadership, in partnership with NASA's Science Mission Directorate, Office of the Chief Engineer and Office of the Chief Technologist.
+
+\section{Background}
+The HEROES payload is an upgrade of the existing HERO payload. The payload consists of 8 grazing-incidence HXR telescopes with a 6-m focal length coupled to complementary gas scintillation proportional counter detectors, all held by a carbon-fiber and aluminum optical bench. A diagram of the payload can be seen in Figure~\ref{fig:gondola}. 
+
+The gondola makes use of a coarse aspect system for slewing based on rate-controlled gyros. An elevation (i.e., pitch) motor controls the elevation by tipping the optical bench from the center. An azimuth (i.e., yaw) motor is located at the top of the gondola structure and rotates the entire payload. A differential global positioning system (GPS) and a magnetometer provide feedback for pointing in azimuth. A fine inertial-mode pointing system has historically been based upon aspect information provided by a day/night co-aligned star camera to observe astrophysical sources. These aspect solutions are used to update the gyro drift rates to keep the target in the center of the telescope's field of view. Due to the extreme sensitivity necessary to observe stars, the HEROES star camera does not have the ability to provide aspect while pointing near (\ap1~degree) the Sun. 
+
+The two main HEROES payload upgrades that provide the capability to observe the Sun and astrophysical targets during the same balloon flight are the addition of a new solar aspect system (SAS) to provide real-time solar aspect feedback to the fine inertial-mode pointing as well as high-precision post-flight pointing knowledge. A removable shutter was also added to the star camera to protect it during solar observations.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=3.4in]{figures/heroes_gondola}
+\end{center}
+\vspace{-0.15in}
+\caption{A diagram showing the HEROES gondola along with the Solar Aspect System components, which consists of the Pitch-Yaw Aspect System (PYAS) and the Roll Aspect System (RAS). The PYAS is mounted to the side of the gondola co-boresighted with the main telescope. It is composed of two subsystems: the PYAS-F (front) and PYAS-R (rear). The RAS is a separate system mounted on a truss near the center of the optical bench.} 
+\label{fig:gondola}
+\end{figure}
+
+\section{Pointing Requirements}
+The nature of the HEROES HXR optics combined with the existing HERO pointing control system dictated the HEROES solar pointing requirements. The HEROES HXR telescope is an imaging telescope which operates in photon-counting mode. The arrival time, location, and energy of each photon is recorded individually therefore the stability of the platform is not constrained by an exposure time. On the other hand, relative-pointing knowledge must be accurate in order to reconstruct images after the fact. The resolution of the telescopes is \ap20~arcsec. Pitch-yaw-aspect knowledge must therefore be commensurate with this value in order to not degrade the image resolution. A roll-knowledge requirement of 3.6~arcmin limits the effective additional pitch-yaw uncertainty to $<$1 arcsecond over the entire solar disk. A pitch-yaw-jitter requirement of within 1 arcmin of the target for 50\% of the time is a consequence of the fact that the telescope's response degrades rapidly in both angular resolution as well as throughput as a function of off-axis angle.  The real-time aspect solutions are required to be provided to the pointing control system with an update cadence of 1 second. Finally, the HEROES coarse aspect system can point HEROES to within \ap1 degree of a target, which translates to a field-of-view requirement for the SAS of 2~degrees. See Table~\ref{pointing_reqs} for a summary of these requirements. 
+
+\begin{table}[htdp]
+\caption{Summary of the HEROES SAS pointing requirements}
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Type & Value \\
+\hline
+Pitch-Yaw Knowledge & 20 arcsec \\
+Roll Knowledge & 3.6 arcmin \\
+Pitch-Yaw Jitter & 1 arcmin (50\%) \\
+Co-alignment & 1 arcmin \\
+Cadence & 1 Hz \\
+Field of View & 2 degrees \\
+\hline
+\end{tabular}
+\end{center}
+\label{pointing_reqs}
+\end{table}%
+
+\section{Flight Overview}
+The HEROES payload was launched from the Columbia Scientific Ballooning Facility in Fort Sumner, NM, on 2013 Sep 21 (Flight \#645N) and spent approximately 21 hours at a float altitude greater than 32 km. The launch took place at 05:58 local time (UTC-7). The payload officially reached float altitude (129 kft) at 08:49. At 08:55, the payload began to slew to the Sun using the coarse pointing system. At 09:21, the PYAS-F began providing aspect solutions and the payload entered fine-pointing mode. Soon thereafter the SAS was commanded to point to a solar target at [-794,~102] arcsec as given in helioprojective coordinates. At 16:34, after\ap7 hours of solar observations, HEROES switched to making astrophysical observations.
+
+\section{The Solar Aspect System (SAS)}
+In order to meet the requirements listed in Table~\ref{pointing_reqs}, the SAS consists of two separate systems: the Pitch-Yaw Aspect System (PYAS) and the Roll Aspect System (RAS). The original concept for the SAS is based on that currently being developed for the GRIPS (Gamma-Ray Imaging/Polarimeter for Solar flares) balloon payload \cite{Shih:2012fe}, which is scheduled to fly in 2014. The PYAS is composed of two subsystems, the PYAS-F (front) and the PYAS-R (rear). Either of these two nearly identical subsystems can provide pitch-yaw aspect knowledge as well as real-time pointing solutions to the fine inertial-mode pointing system. The RAS records data during flight for post-flight determination of the roll aspect knowledge.
+
+Two single-board computer stacks (nicknamed SAS1 and SAS2), each in its own air-tight enclosures pressurized to greater than 1 atm, controlled the SAS systems. SAS1 controlled PYAS-F, and SAS2 controlled both PYAS-R and RAS. Both SAS1 and SAS2 computers used the Cool RoadRunner-945GSE PC/104-Plus single-board computer, and each had two 250-GB solid-state drives to store images for post-flight processing. All three systems recorded their aspect images using the Imperx Bobcat IGV-B1310, a 1 megapixel Charge-Coupled Device (CCD) camera, controlled through an Ethernet connection.
+
+\section{The Pitch-Yaw Aspect System (PYAS)}
+\begin{figure*}
+\centering
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/PYAS_fiducial_screen.eps}
+  \vspace{0.1in}
+  \caption{(Left) The PYAS screen fiducial pattern. The active screen area is outlined in a circle. The outline represents the screen mounting area. The screen subtends 2.91 degrees of arc. The grey circle represents the approximate size of the Sun on the screen. Since the fiducials are only visible on the small area of the screen illuminated by the Sun, the fiducial pattern was devised such each fiducial can be uniquely identified by the distance to just two of its neighbors in perpendicular directions. (Right) An example image of the Sun as imaged into the PYAS screen and recorded by the PYAS camera. Due to the limited dynamic range of the camera, the entire field of view of the camera is essentially black except for the Sun image. The sub image shows the Sun illuminating the fiducials on the PYAS screen. The white crosses show a few of the limb solutions found by the limb-finding algorithm. The thin black cross is the Sun center as derived from the set of limbs. The blue annotations show the results of the fiducial-finding algorithm, which has correctly identified all the fiducials and outputs their ID numbers.}
+\label{fig:fiducials}
+\end{figure*}
+
+PYAS-F and PYAS-R together span the entire length of the 6-meter optical bench. In addition to providing redundancy, the two systems when compared provide a measurement of the misalignment between the x-ray optics and detectors during solar observations. The basic design of either PYAS subsystem (both front and rear) is as follows. A singlet plano-convex lens with a 3-m focal length (by OptoSigma) is located at the front of the subsystem and produces an image of the Sun onto a metal screen 3~m away. An IR (700~nm cutoff) filter plus a bandpass filter (630$\pm$2~nm center, 10$\pm$2~nm FWHM) were mounted in front of the solar lens. These filters reduce the solar heat input onto the screen and minimize chromatic aberration. A CCD camera with a 75-mm lens set to f/8, located next to the solar lens, recorded the image of the Sun on the screen as a function of time with a cadence of \ap4~Hz.  A painted cardboard baffle spans the the 3~m between the solar lens and the screen to block any scattered light.  For PYAS-F (PYAS-R), the lens and camera are mounted at the optics (elevation) flange, and the screen is mounted at the elevation (detector) flange.
+
+To be able to precisely determine the location of the image of the Sun on the screen using the camera, the screen was painted white and a deliberate pattern of black cross-shaped fiducials was added by screen printing (Figure~\ref{fig:fiducials}).  The use of fiducials on the screen greatly reduces the requirements on camera alignment. The screen plate scale is 1.1~arcmin/mm and spans 2.91~degrees. For reference, the Sun's angular size is \ap0.5~degrees. With the PYAS camera system imaging the screen, each pixel corresponds to \ap10.2~arcsec while the whole Sun is about 190~pixels across. Each image was processed in real-time to determine aspect solutions at a rate of 4~Hz. Solutions were provided to the pointing control system at a rate of 1~Hz. Every PYAS image was also saved to the solid-state storage for post-flight processing.
+
+\subsection{PYAS to Telescope Alignment}
+
+A requirement of any co-boresight pointing system is to ensure that both systems are pointing in the same direction. For the PYAS no adjustments can be made to the system since the solar lens and screen are hard mounted to the optical bench. The problem is then to find the calibrated PYAS screen center. A calibration procedure similar to that used for the HXR telescopes and the star camera has been developed for the SAS, which makes use of an alignment stand. This stand is used to precisely position light sources (HXR or visible) to be imaged by HEROES. To calibrate the screen center for PYAS-F and PYAS-R, a laser illuminated both solar lenses at the same time as HXRs were illuminating the HXR optics from 100 feet. Mechanical features on the alignment stand are accurate to $<$1 arcsec at this distance. The stand was leveled to better than 0.1~degrees, and initial alignment was made by using a set of two alignment holes on the side of the optical bench. The image of the laser spot on the PYAS screens defines the screen centers at the same time as the HXR telescope centers were measured. We found that this method provided the location of the screen center to with an accuracy of \ap1~arcmin. This accuracy was limited by low-level distortions of the image introduced by the PYAS bandpass filter.
+
+\subsection{The PYAS Algorithm}
+
+The role of the PYAS algorithm is to process each image taken by the PYAS camera to and produce a real-time aspect solution during solar observations. The image of the Sun, as well as the location of illuminated cross-shaped fiducials, are determined in pixel coordinates from the camera image.  The physical locations of these fiducials are known from pre-flight measurements, and thus provide the translation of the Sun position to physical coordinates.
+
+\begin{figure*}
+\centering
+{
+\includegraphics[width=3.0in]{figures/PYASF_el_timeseries}
+}
+{
+\includegraphics[width=3.0in]{figures/PYASF_el_histogram}
+}
+{
+\includegraphics[width=3.0in]{figures/PYASF_az_timeseries}
+}
+{
+\includegraphics[width=3.0in]{figures/PYASF_az_histogram}
+}
+\caption{(Top Left) A time series of the HEROES telescope target offset in elevation as measured by PYAS-F during the entirety of the HEROES solar observations. (Top Right) A histogram of the measured HEROES elevation by PYAS-F, which has a standard deviation of 16~arcsec. A Gaussian fit (black line) is overlaid for comparison. HEROES pointing was within \ap10~arcsec in elevation of the target 50\% of the time. (Bottom Left) A time series of the HEROES telescope target offset in azimuth as measured by PYAS-F during the entirety of the HEROES solar observations. (Bottom Right) A histogram of the measured HEROES azimuth offset by PYAS-F, which has a standard deviation of 48~arcsec. A Gaussian fit (black line) is overlaid for comparison. HEROES pointing was within \ap30~arcsec in azimuth of the target 50\% of the time.}
+\label{fig:pyasf_performance}
+\end{figure*}
+
+
+At a top level, the algorithm follows these steps:
+
+\begin{enumerate}
+\item Determine the location of the Sun in pixel coordinates
+\item Determine the location of the Sun-illuminated fiducials in pixel coordinates
+\item Identify visible fiducials in order to determine locations in payload coordinates
+\item Generate the mapping from pixel coordinate to payload coordinates
+\item Convert Sun location to payload coordinates
+\item Convert payload coordinates to sky coordinates
+\end{enumerate}
+
+Locating the Sun in a PYAS image is a shape-finding problem. The combination of image size, cadence, and limits on processing power ruled out traditional shape-finding methods like the Hough transform or template matching. In order to avoid operations on the entire PYAS image which are time-consuming, the Sun-finding algorithm was based on the solar-aspect system used by the aspect system of the RHESSI spacecraft \cite{Fivian:2002eg}. For each image frame, the algorithm examines a selection of 10--20 rows and columns evenly sampled across the entire image. In each of these lines, the algorithm searches for sharp increases followed later by a sharp decrease in brightness that indicates the presence of two solar-limb crossings. The solar limb is an extremely sharp feature ($<$arcsecond)\cite{Fivian:2002eg}. As observed by the PYAS camera, the limbs spans approximately 8~pixels. The limb locations are refined with a linear fit to the limb, then averaged with each other to determine the Sun center. The standard deviation of the limb locations is used as the error for the location of the Sun center.
+
+Once the Sun has been located, the algorithm works on a sub-image containing just the region of the fiducial grid illuminated by the Sun (see Figure~\ref{fig:fiducials}). Working with this smaller image allows the use of more computationally-intensive shape-detection algorithms\cite{2002ITIP...11.1209M}. The sub-image is convolved with a filter matched to the cross shape of a fiducial. The peaks of this response are refined by taking a thresholded centroid of the response around each peak value to determine sub-pixel locations of fiducials.
+
+Once fiducials are located, they must be identified. The fiducials are spaced on a rotated grid (see Figure~\ref{fig:fiducials}. The vertical spacing between each row of fiducials increases monotonically from the center, and the horizontal spacing between each column of fiducials also increases monotonically from the center.  With this fiducial strategy, the spacing between two fiducials in a line (either a row or a column) uniquely identifies those fiducials in that line.  Thus, a given fiducial can be uniquely identified with just two neighboring fiducials in perpendicular directions.  Once at least one fiducial has been uniquely identified, neighboring fiducials can be identified, even if they do not have the necessary neighbors themselves.
+
+Once fiducials are identified, their pixel to payload correspondences are used to compute a linear mapping between coordinate systems, and the resulting mapping is used to convert the pixel location of the Sun to payload coordinates. The implementation of this algorithm is open-source and can be found on github.com\footnote{\url{https://github.com/HEROES-GSFC/SAS}}
+
+\subsection{Flight Performance}
+As previously mentioned, HEROES solar observations lasted a total of 7 consecutive hours. During this entire time period, only PYAS-F provided aspect solutions for HEROES solar pointing. The SAS1 computer saved a total of 103,820 images at an average rate of 3.98 images per second. Every fourth frame was used to provide a real-time solution to the fine-pointing control system, for an update rate of \ap1~Hz. During this time, PYAS-R was fully functional, but the PYAS-R solutions were note sent to the pointing control system. It achieved a slightly lower cadence of 3.9 images per second due to the fact that it also handles RAS images. Based on expected solar activity, the PYAS-F was commanded to target an active region near the limb of the Sun ([-794,~102] arcsec from Sun center) for the entire duration of the solar observations. The pointing performance in elevation and azimuth can be seen in Figure~\ref{fig:pyasf_performance}. 
+
+The PYAS-F-controlled HEROES pointing was found to be within 13~arcsec of the target 50\% of the time. The standard deviation of the pointing jitter from the target was found to be 16~arcsec and 48~arcsec in elevation and azimuth, respectively. The large difference is likely due to the fact the pointing in azimuth requires the entire payload to move compared to pointing in elevation which only requires moving the optical bench. The pointing jitter in helioprojective coordinates can be seen in Figure~\ref{fig:pyasf_image}. In this coordinate system, HEROES achieved a pointing jitter standard deviation of \ap28~arcsec from the desired solar target, active region \#11850. A small constant offset of 11~arcsec was found between the desired target and the actual target and is currently under investigation.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=3.0in]{figures/PYASF_image}
+\end{center}
+\vspace{-0.15in}
+\caption{The HEROES solar pointing in solar coordinates. For context a 193 angstrom EUV image from SDO/AIA of active region \#11850, the HEROES solar science target, is shown in the background. The field of view of this image is representative of that provided by the HEROES x-ray optics. The contours show the probability density of the pointing vector during the HEROES solar observations. The vertical and horizontal lines show the desired pointing location.} 
+\label{fig:pyasf_image}
+\end{figure}
+
+\section{The Roll Aspect System (RAS)}
+
+The HEROES payload undergoes a variety of motion in the roll direction, but since the HEROES pointing control system does not control the roll of the gondola, no real-time knowledge of roll aspect is necessary.  The roll aspect for astrophysics observations is determined using the star camera, but the star camera cannot be used during solar observations due to the sensitivity of the star camera. The SAS instead includes an independent roll aspect system (RAS) for solar observations.
+
+The RAS measures payload roll using the horizon as an external reference.  A silvered, knife-edge, right-angle prism combines opposing views of the Earth horizon into a single image (Figure~\ref{fig:ras_illustration}), as recorded by an Imperx Bobcat IGV-B1310 CCD camera.  At float altitude, the horizons are about 6~degrees below the horizontal, with black space above the horizons, so overlapping the opposing horizon views does not compromise either view.  As the payload rolls, the two horizons will move in a coupled fashion in the combined image.  A red filter (600~nm cutoff) reduces atmospheric haze, and the 12~mm~f/1.8 lens provides a FOV of 23~degrees by 17~degrees with a plate scale of 1.06~arcmin/pixel.  The RAS assembly is mounted to the gondola to obtain unobstructed horizon views (Figure~\ref{fig:ras_mounting}).
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=2.0in]{figures/ras}
+\end{center}
+\vspace{-0.15in}
+\caption{An illustration of the RAS concept using images from flight. A mirrored prism combines the horizon views from opposite directions into a single camera image. At float altitude, the horizons are about 6 degrees below the horizontal and therefore do not obscure each other. As the payload rolls, the two horizons will shift in tandem to the left or to the right.} 
+\label{fig:ras_illustration}
+\end{figure}
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=2.5in]{figures/ras_mounting}
+\end{center}
+\vspace{-0.15in}
+\caption{A diagram of the RAS as mounted on the HEROES gondola. The camera and prism are protected by an Al environmental box. Rectangular cutouts on the sides provide an unobstructed field of view (shown in green). The camera and prism are mounted on brackets held by a mounting plate. The mounting plate is attached to the gondola through a mounting weldment which is bolted onto the gondola. This position was chosen so as to be as nearly coupled to the optical bench as possible to minimize roll offsets introduced by flexing of the gondola structure.} 
+\label{fig:ras_mounting}
+\end{figure}
+
+The location of the opposing horizons provides absolute-roll knowledge, and the coupled motion of the opposing horizons provides relative-roll knowledge.  RAS images are stored at 4~Hz to onboard solid-state storage, with the roll aspect determined through post-flight analysis.
+
+\subsection{Flight Performance}
+
+The top panel of Figure~\ref{fig:ras_example} shows an image recorded during the actual flight.  Local weather conditions on 2013~Sep~21 consisted of significant cloud cover to the west and clearer skies to the east.  The horizon itself is difficult to identify precisely, especially when obscured by clouds, and thus is not directly analyzed.  Instead, the exponential fall-off of the atmospheric haze above the horizon is used in the analysis to determine relative and absolute roll. This haze was found to be insensitive to the underlying cloud cover.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=3.5in]{figures/ras-example}
+\end{center}
+\vspace{-0.15in}
+\caption{(Top) An example image from the RAS.  The solid, red vertical line marks where the midline between the two horizons as determined from fitting the atmospheric haze.  The dashed, cyan vertical lines mark the approximate location of the horizon of the Earth's surface.  The dotted, orange horizontal line marks the location of the 1D cut shown in the following panel. (Bottom) A 1D cut of the above 2D image.  The magenta line shows the fit to the exponential fall-off of the atmospheric haze.} 
+\label{fig:ras_example}
+\end{figure}
+
+The bottom panel of Figure~\ref{fig:ras_example} shows a one-dimensional cut of the same image, with an illustration of the fit to the exponential fall-off of the atmospheric haze.  The model used for fitting consists of two exponential functions with the same scale height (equivalent to a hyperbolic cosine function) plus a constant offset.  Thus, the position and motion of the center of the fitted model provides the roll knowledge.
+
+The RAS recorded images throughout the solar observation, with only minor data gaps.  Prior to 19:00~UT on 2013~Sep~21, the RAS images are afflicted with apparent saturation of the CCD in the camera likely due to an error in the camera ADC settings.  Although the horizon itself is saturated, the exponential fall-off of the atmospheric haze is unaffected at higher altitudes and thus roll can still be determined.  Following a complete power cycle of the RAS and modifications to the camera's operating parameters, the RAS images are of good quality after 19:00~UT and for the majority of the solar observations.
+
+The payload roll over the \ap9~hours of RAS measurements on 2013~Sep~21 reveal a number of components of roll motion with different frequencies and amplitudes (Figure~\ref{fig:ras_all}, top).  Variations at low frequencies with a timescale of hours and a peak-to-peak amplitude of \ap10~arcmin is likely due to the shifting balance of the gondola as it tracks the Sun.  Variations at middle frequencies with a timescale of \ap5~minutes is likely from perturbations produced by the pointing control system and other transient perturbations (e.g., wind).  Finally, variations at high frequencies with a stable period of 23~seconds are the pendulum motion of the gondola (Figure~\ref{fig:ras_all}, middle).  Note that the HEROES payload experienced relatively calm winds, and other payloads may experience stronger perturbations or a larger-amplitude pendulation.
+
+The relative roll accuracy from the post-flight analysis is better than \ap0.3~arcmin, which corresponds to, at worst, a \ap0.1~arcsec smear for sources at the solar limb.
+
+\subsection{Comparison to the Star Camera}
+
+Unlike the star camera, which can determine roll aspect for only non-solar observations, the RAS can provide roll knowledge for both solar and astrophysics observations, as long as the Sun is sufficiently high in elevation to evenly illuminate both horizon views.  This overlap in roll-aspect capability allows for a comparison, and ultimately a cross-calibration, between the RAS and the star camera.
+
+The first astrophysics target directly following the solar observation was GRS1915+105, and both the star camera and the RAS measured roll during the time period 23:00--23:50~UT (Figure~\ref{fig:ras_all}, bottom).  There is strong agreement between the two measurements of payload roll, except near some of the peaks.  Refinement passes on the star-camera measurements to exclude solutions with large uncertainties may resolve some of this disagreement.  Note that the star camera, with its slower cadence of \ap7.2~s, is unable to clearly resolve the pendulation motion.
+
+\begin{figure}[!t]
+\begin{center}
+\includegraphics[width=3.5in]{figures/ras-all}
+\end{center}
+\vspace{-0.15in}
+\caption{(Top) The derived payload roll for \ap9~hours on 2013 Sep 21.  Note the low-frequency variation with a timescale of hours and the mid-frequency variation with a timescale of \ap5~minutes.  The dashed, magenta vertical lines mark the period of solar observation.  The solid, blue vertical lines mark the time period for the second panel.  The solid, green vertical lines mark the time period of the third panel. (Middle) The derived payload roll at the start of solar observation.  Note the high-frequency pendulation with a period of 23~seconds on top of mid-frequency variations.  The dashed, magenta vertical line marks when the pointing control system began tracking the Sun. (Bottom) The derived payload roll at the start of the GRS1915+105 observation, with the (preliminary) payload roll derived by the star camera (red) shown in comparison.  There is strong agreement between the measurements by the two systems.}
+\label{fig:ras_all}
+\end{figure}
+
+\section{Conclusion}
+The HEROES flight has demonstrated the capabilities of a new solar aspect system. Developed in only a year, the SAS has provided stable and accurate solar pointing knowledge for the HEROES payload to make new solar HXR observations. Combined with the existing HERO pointing control system, the PYAS has provided pointing stability to within 13~arcsec of the target 50\% of the time. In addition, the SAS has provided solar pointing knowledge at 3.9~Hz to better than 10~arcsec, satisfying all of the pointing requirements of the HEROES mission. HEROES has provided an important test bed for the upcoming launch of the GRIPS balloon payload which will use the RAS as well as a modified version of the PYAS. The development of the SAS will also benefit SuperHERO, a proposed balloon payload with improved optics as well as new solid-state pixelated HXR detectors which will investigate both HXR emission from solar flares as well as astrophysical sources.
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+The authors would like to thank would like to acknowledge the Hands-On Project Experience (HOPE) Program for their support of this effort. HOPE is an award presented annually by the NASA Academy of Program/Project \& Engineering Leadership (APPEL), in partnership with NASA's Science Mission Directorate (SMD), Office of the Chief Engineer (OCE) and Office of the Chief Technologist (OCT). The HOPE program manager is David Pierce. We would also like to thank the HERO project for lending their payload and experience and to thank both Marshall Space Flight Center and Goddard Space Flight Center for their support. This research made use of SunPy, a community-developed Python package for solar data analysis\cite{2013SPD....44..136C}.
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/StevenChriste.pdf}}]{Steven Christe}
+is a Research Astrophysicist at the Solar Physics Laboratory at the NASA Goddard Space Flight Center. Dr. S. Christe received his Ph.D. from the University of California, Berkeley, at the Space Sciences Laboratory under Prof. R.P Lin. During his graduate studies, working with Dr. S.
+Krucker, Dr. Christe developed a sounding rocket program to study microflares by applying newly-developed hard X-focusing optics combined with pixelated solid state detectors to solar observations. The FOXSI program, short for the Focusing Optics X-ray Solar Imager, is a partnership between the Space Sciences Lab UCB, MSFC, and the Japanese Astro-H mission. As a postdoctoral researcher at the Space Sciences Lab, Dr. S. Christe oversaw the FOXSI program as the project manager/project scientist. These responsibilities have continued after he joined the GSFC in the Fall of 2009. FOXSI flew successfully in Nov 2012. Dr. Christe is the GSFC PI for HEROES.
+
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/AlbertShih.pdf}}]{Albert Y. Shih}
+joined the Solar Physics Laboratory at GSFC in 2010. His research interests focus on X-ray and gamma-ray observations of particle acceleration in solar flares. He is currently serving as the Deputy Mission Scientist for RHESSI, and is the project manager and project scientist for Gamma Ray Imager/Polarimeter for Solar Flares (GRIPS). Dr. Shih is the solar project scientist for HEROES.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/MarcelloRodriguez.pdf}}]{Marcello Rodriguez}
+started at GSFC as a Co-Op in 2005 and became a full- time employee in 2007. He has worked on the Lunar Reconnaissance Orbiter (LRO) spacecraft purification system. And has been on detail in the science division working on instrumentation. Mr. Rodriguez is the SAS Systems Engineer for HEROES.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/KyleGregory.pdf}}]{Kyle Gregory}
+studied electrical engineering at the University of Pennsylvania as well as the University of Maryland College Park. He joined GSFC in 2005 worked on a number of projects as including the Gravitational and Extreme Magnetism Small Explorer (GEMS) where he developed FPGA firmware for the main science instrument. He also worked on the Soil Analysis at Mars (SAM) mission where he designed and conducted integration validation testing. He is the SAS Electrical Engineer.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/AlexCramer.pdf}}]{Alexander Cramer} studied mathematics and electrical engineering as an undergraduate at the University of Maryland, receiving BS degrees in both in 2009. He has worked as an Electrical Engineer at GSFC since 2009. He is currently working toward a PhD in machine vision at the University
+of Maryland. Mr. Cramer is the SAS Software Engineer.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/MelissaEdgerton.pdf}}]{Melissa Edgerton}
+is an aerospace engineer for NASA at the GSFC. She earned a B.S. in Mechanical Engineering and is currently pursuing a M.S. in Aerospace Engineering from the University of Maryland in College Park. Melissa spent two years as a co-op student at Goddard before converting to a
+full-time employee three years ago. She is working in the Electromechanical Systems Branch with a focus on Optomechanics. Ms. Edgerton is the SAS Mechanical Engineer.
+
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/JessicaGaskin.pdf}}]{Jessica Gaskin}
+is a physicist in the X-Ray Astronomy Group at NASA Marshall Space Flight Center in Huntsville, AL. She has characterized multiple types of solid state detector systems for X- Ray Astronomy and has supported the High Energy replicated Optics (HERO) hard X-ray balloon- borne telescope; offering flight
+support and detector calibration support. Over the past few years, she has focused her research on Planetary/In- Situ based instrumentation, concentrating on the mini- SEM. She has a B.S. in Physics (specializing in Astrophysics) from New Mexico Tech, an M.S. in Astronomy from Case Western Reserve University, and a Ph.D. in Physics from the University of Alabama in Huntsville. Dr. Gaskin is the MSFC PI for HEROES.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/BrianOConnor.pdf}}]{Brian O'Connor}
+joined MSFC as a Co-Op in 2006. He is a Thermal Engineer in the Thermal \& Mechanical Analysis Branch of the Space Systems Department. He has worked on a number of projects supporting the thermal subsystem team. For the ILN, he performed an extensive analytical trade of
+radiator designs. Mr. OÕConnor is the Thermal Engineer for HEROES.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}[{\includegraphics[width=2in,height=1.25in,clip,keepaspectratio]{figures/AlexSobey.pdf}}]{Alexander Sobey}
+joined MSFCÕs Federal Career Intern Program as an Aerospace Engineer. Since then, he has taken on a structural design role for the Pre-Phase-A study of the Energetic X-ray Imaging Survey Telescope (EXIST). Mr. Sobey has also worked on the International Lunar Network
+(ILN) as well as the Extreme Universe Space Observatory (EUSO) as the structural designer. Mr. Sobey is the lead Mechanical Engineer for HEROES.
+\end{IEEEbiography}
+
+\bibliography{refs}   %>>>> bibliography data in refs.bib
+\bibliographystyle{IEEEtran}   %>>>> makes bibtex use spiebib.bst
+
+
+% that's all folks
+\end{document}
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+
+
+
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+
