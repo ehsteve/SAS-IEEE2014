@@ -45,6 +45,7 @@ Backup[ ]of[ ]*.numbers/
 # Icon must ends with two \r.
 Icon
 
+.dropbox
 
 # Thumbnails
 ._*
